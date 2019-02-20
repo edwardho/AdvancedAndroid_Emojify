@@ -180,11 +180,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Resample the saved image to fit the ImageView
         mResultsBitmap = BitmapUtils.resamplePic(this, mTempPhotoPath);
-        
-        // Detect the faces
-        Emojifier.detectFaces(this, mResultsBitmap);
-        // TODO (10): Change the method call from detectFaces() to detectFacesAndOverlayEmoji() and assign the result to mResultsBitmap.
-        
+
+        // COMPLETE (10): Change the method call from detectFaces() to detectFacesAndOverlayEmoji()
+        // and assign the result to mResultsBitmap.
+        // Detect the faces and overlay emoji
+        mResultsBitmap = Emojifier.detectFacesAndOverlayEmoji(this, mResultsBitmap);
+
         // Set the new bitmap to the ImageView
         mImageView.setImageBitmap(mResultsBitmap);
     }
